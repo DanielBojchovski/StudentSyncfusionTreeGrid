@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@{
+    var data = Student.GetStudentData();
+}
+
+<ejs-treegrid id="Student" dataSource="@data" allowPaging="true" childMapping="Classes" treeColumnIndex="1">
+    <e-treegrid-pagesettings pageSizes="true" pageSize="20" pageCount="4"></e-treegrid-pagesettings>
+    <e-treegrid-columns>
+        <e-treegrid-column field="Id" headerText="Student ID" textAlign="Center" width="95"></e-treegrid-column>
+        <e-treegrid-column field="Name" headerText="Student Name" width="220"></e-treegrid-column>
+        <e-treegrid-column field="DOB" headerText="Date Of Birth" textAlign="Center" format="yMd" type="date" width="115"></e-treegrid-column>
+    </e-treegrid-columns>
+</ejs-treegrid>
